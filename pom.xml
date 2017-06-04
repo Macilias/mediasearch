@@ -1,0 +1,217 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>mediasearch</artifactId>
+	<groupId>com.macilias</groupId>
+	<version>0.1</version>
+	<packaging>jar</packaging>
+	<name>mediasearch</name>
+	<description>mediasearch</description>
+
+	<properties>
+		<slf4j-log4j12.version>1.7.12</slf4j-log4j12.version>
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<!--<maven.version>3.3.9</maven.version>-->
+		<!--<junit.version>4.11</junit.version>-->
+	</properties>
+
+	<dependencies>
+
+		<!--
+		since we can not use the mvn dependency for what ever reason directly,
+		we need to dowload the artifact from
+		https://mvnrepository.com/artifact/net.sf.nachocalendar/nachocalendar/0.23
+		and install it manually
+		mvn install:install-file -Dfile=nachocalendar-0.23.jar -DgroupId=net.sf -DartifactId=nachocalendar -Dversion=0.23 -Dpackaging=jar -DgeneratePom=true
+		-->
+		<dependency>
+			<groupId>net.sf</groupId>
+			<artifactId>nachocalendar</artifactId>
+			<version>0.23</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!--
+		since we can not use the mvn dependency for what ever reason directly,
+		we need to dowload the artifact from
+		https://mvnrepository.com/artifact/com.intellij/forms_rt/6.0.5
+		and install it manually
+		mvn install:install-file -Dfile=forms_rt-6.0.5.jar -DgroupId=com.intellij -DartifactId=forms_rt -Dversion=6.0.5 -Dpackaging=jar -DgeneratePom=true
+		-->
+		<dependency>
+			<groupId>com.intellij</groupId>
+			<artifactId>forms_rt</artifactId>
+			<version>6.0.5</version>
+		</dependency>
+
+
+		<!--
+		since we can not use the mvn dependency for what ever reason directly,
+		we need to dowload the artifact from
+		https://mvnrepository.com/artifact/org.imgscalr/imgscalr-lib/4.2
+		and install it manually
+		mvn install:install-file -Dfile=imgscalr-lib-4.2.jar -DgroupId=org.imgscalr -DartifactId=imgscalr-lib -Dversion=4.2 -Dpackaging=jar -DgeneratePom=true
+		-->
+		<dependency>
+			<groupId>org.imgscalr</groupId>
+			<artifactId>imgscalr-lib</artifactId>
+			<version>4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>15.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-log4j12.version}</version>
+		</dependency>
+
+
+
+		<!-- Testing -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.2.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easytesting</groupId>
+			<artifactId>fest-swing</artifactId>
+			<version>1.2.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>1.5.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+			<version>1.5.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ezmorph</groupId>
+			<artifactId>ezmorph</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>10.0.1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.macilias.mediasearch.client.view.MediaSearchGUI</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.macilias.mediasearch.client.view.MediaSearchGUI</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classifier></classifier>
+							<includes>
+								<include>**/*</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>fsm</id>
+						<phase>install</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>src/main/assembly/fsm.xml</descriptor>
+							</descriptors>
+							<appendAssemblyId>true</appendAssemblyId>
+							<finalName>${project.artifactId}</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+
+    </plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>jspresso</id>
+			<name>jspresso</name>
+			<url>http://repository.jspresso.org/maven2/</url>
+		</repository>
+	</repositories>
+
+</project>

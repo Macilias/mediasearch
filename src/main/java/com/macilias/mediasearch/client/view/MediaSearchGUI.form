@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.macilias.mediasearch.client.view.MediaSearchGUI">
+  <grid id="27dc6" binding="clientPanel" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="1415" height="1046"/>
+    </constraints>
+    <properties>
+      <minimumSize width="-1" height="-1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="f641e" binding="clientTabbedPane">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="29149" binding="mediaSearchPanel" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="10" left="10" bottom="10" right="10"/>
+            <constraints>
+              <tabbedpane title="Mediensuche"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <scrollpane id="421e4" binding="resultScrollPane">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="4" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="454" height="200"/>
+                    <maximum-size width="-1" height="250"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3355444"/>
+                  <name value="Ergebniss Tabelle"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="40bde" class="javax.swing.JTable" binding="resultTable">
+                    <constraints/>
+                    <properties>
+                      <autoCreateRowSorter value="true"/>
+                      <name value="Treffer"/>
+                      <preferredScrollableViewportSize width="450" height="80"/>
+                      <updateSelectionOnSort value="true"/>
+                    </properties>
+                    <clientProperties>
+                      <terminateEditOnFocusLost class="java.lang.Boolean" value="false"/>
+                    </clientProperties>
+                  </component>
+                </children>
+              </scrollpane>
+              <grid id="c852d" binding="metaPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none" title="Meta-Informationen"/>
+                <children>
+                  <scrollpane id="72ae7" binding="metaScrollPane">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <minimum-size width="300" height="200"/>
+                        <preferred-size width="500" height="600"/>
+                      </grid>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="97b9e" class="javax.swing.JTable" binding="metaTable" custom-create="true">
+                        <constraints/>
+                        <properties>
+                          <autoResizeMode value="4"/>
+                          <preferredScrollableViewportSize width="-1" height="-1"/>
+                          <showHorizontalLines value="false"/>
+                          <showVerticalLines value="false"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </scrollpane>
+                  <hspacer id="59a9b">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                  </hspacer>
+                </children>
+              </grid>
+              <grid id="b7d5b" binding="previewPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="4" anchor="0" fill="3" indent="0" use-parent-layout="true">
+                    <minimum-size width="300" height="200"/>
+                    <preferred-size width="500" height="600"/>
+                  </grid>
+                </constraints>
+                <properties/>
+                <border type="none" title="Vorschau"/>
+                <children/>
+              </grid>
+              <vspacer id="a9c1c">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <preferred-size width="-1" height="700"/>
+                    <maximum-size width="-1" height="1024"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <grid id="6afbb" binding="lefthandHeaderPanel" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="455fc" class="javax.swing.JLabel" binding="queryLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="25"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="Freitext"/>
+                    </properties>
+                  </component>
+                  <component id="421f5" class="javax.swing.JTextField" binding="queryTextField" custom-create="true">
+                    <constraints>
+                      <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="4" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <focusAccelerator value="F"/>
+                      <focusTraversalPolicyProvider value="false"/>
+                      <name value="Freitext Suchfeld"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
+                  <component id="75ea4" class="javax.swing.JLabel" binding="mediaTypeLabel">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="Medientyp"/>
+                    </properties>
+                  </component>
+                  <component id="a025f" class="javax.swing.JComboBox" binding="mediaTypeComboBox">
+                    <constraints>
+                      <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="4" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <model/>
+                      <name value="Medientyp Auswahl"/>
+                    </properties>
+                  </component>
+                  <component id="a08b9" class="javax.swing.JCheckBox" binding="mediaStateActiveCheckBox">
+                    <constraints>
+                      <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <focusTraversalPolicyProvider value="false"/>
+                      <name value="nur aktive Medien"/>
+                      <text value="nur aktive"/>
+                    </properties>
+                  </component>
+                  <component id="2c467" class="javax.swing.JCheckBox" binding="mediaStateInactiveCheckBox">
+                    <constraints>
+                      <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <focusTraversalPolicyProvider value="false"/>
+                      <name value="nur inaktive Medien"/>
+                      <text value="nur inaktive"/>
+                    </properties>
+                  </component>
+                  <component id="7ed68" class="javax.swing.JButton" binding="searchButton">
+                    <constraints>
+                      <grid row="3" column="3" row-span="1" col-span="2" vsize-policy="4" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <focusTraversalPolicyProvider value="false"/>
+                      <name value="Suchen Knopf"/>
+                      <text value="Suchen"/>
+                    </properties>
+                  </component>
+                  <vspacer id="b5dd6">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="35"/>
+                        <preferred-size width="-1" height="35"/>
+                      </grid>
+                    </constraints>
+                  </vspacer>
+                </children>
+              </grid>
+              <grid id="e3b4a" binding="righthandHeadPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="5febb" binding="searchButtonPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="6990d" class="javax.swing.JButton" binding="favouriteSearchesSaveButton">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <name value="Suche Speichern Knopf"/>
+                          <text value="Suche Speichern"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="a69a1" binding="favouriteSearchesSlot1" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="243aa" class="javax.swing.JButton" binding="favouriteButton1">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <enabled value="false"/>
+                          <name value="Favoriten Suche 1"/>
+                          <text value="Button"/>
+                          <visible value="false"/>
+                        </properties>
+                      </component>
+                      <component id="53375" class="javax.swing.JButton" binding="favouriteButton2">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <enabled value="false"/>
+                          <name value="Favoriten Suche 2"/>
+                          <text value="Button"/>
+                          <visible value="false"/>
+                        </properties>
+                      </component>
+                      <component id="da44c" class="javax.swing.JButton" binding="favouriteButton3">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <enabled value="false"/>
+                          <name value="Favoriten Suche 3"/>
+                          <text value="Button"/>
+                          <visible value="false"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="1f5be" binding="favouriteSearchesSlot2" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="f9027" class="javax.swing.JButton" binding="favouriteButton4">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <enabled value="false"/>
+                          <name value="Favoriten Suche 4"/>
+                          <text value="Button"/>
+                          <visible value="false"/>
+                        </properties>
+                      </component>
+                      <component id="d9c30" class="javax.swing.JButton" binding="favouriteButton5">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <enabled value="false"/>
+                          <name value="Favoriten Suche 5"/>
+                          <text value="Button"/>
+                          <visible value="false"/>
+                        </properties>
+                      </component>
+                      <component id="17c17" class="javax.swing.JButton" binding="favouriteButton6">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <enabled value="false"/>
+                          <name value="Favoriten Suche 6"/>
+                          <text value="Button"/>
+                          <visible value="false"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <component id="71481" class="javax.swing.JCheckBox" binding="timeFromCheckBox">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <focusTraversalPolicyProvider value="false"/>
+                      <name value="Zeit von"/>
+                      <text value="von"/>
+                    </properties>
+                  </component>
+                  <component id="15b55" class="javax.swing.JCheckBox" binding="timeToCheckBox">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <focusTraversalPolicyProvider value="false"/>
+                      <name value="Zeit bis"/>
+                      <text value="bis"/>
+                    </properties>
+                  </component>
+                  <component id="9aa30" class="javax.swing.JCheckBox" binding="intervalCheckBox">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <name value="Zeit Interval"/>
+                      <text value="Interval"/>
+                    </properties>
+                  </component>
+                  <component id="1f2d2" class="net.sf.nachocalendar.components.DateField" binding="timeFromDateField">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="90" height="22"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <antiAliased value="true"/>
+                      <enabled value="false"/>
+                      <name value="Zeit von Wahl"/>
+                    </properties>
+                  </component>
+                  <component id="afcd8" class="net.sf.nachocalendar.components.DateField" binding="timeToDateField">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="90" height="22"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <antiAliased value="true"/>
+                      <enabled value="false"/>
+                      <name value="Zeit bis Wahl"/>
+                    </properties>
+                  </component>
+                  <component id="6ed16" class="javax.swing.JComboBox" binding="intervalComboBox">
+                    <constraints>
+                      <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <enabled value="false"/>
+                      <model/>
+                      <name value="Zeit Interval Wahl"/>
+                    </properties>
+                  </component>
+                  <hspacer id="afd2c">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                  </hspacer>
+                </children>
+              </grid>
+              <grid id="a4c17" binding="footerPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="ee060" binding="footerControllPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="4" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <grid id="407ab" binding="handlerPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                        <constraints border-constraint="East"/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="a9dc4" class="javax.swing.JButton" binding="optionalHandlerButton">
+                            <constraints/>
+                            <properties>
+                              <name value="Sekundärer FS Handler"/>
+                              <text value="Im Client Öffnen"/>
+                            </properties>
+                          </component>
+                          <component id="88ff8" class="javax.swing.JButton" binding="copyToClipboardButton">
+                            <constraints/>
+                            <properties>
+                              <name value="Ergebnisse Auswahl Knopf"/>
+                              <text value="Ergebnis(e) auswählen"/>
+                            </properties>
+                          </component>
+                          <component id="f377a" class="javax.swing.JButton" binding="handlerButton">
+                            <constraints/>
+                            <properties>
+                              <name value="Haupt FS Handler"/>
+                              <text value="Rufe den Handler auf"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="4fb83" binding="infoPanel" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints border-constraint="Center"/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="a652a" class="javax.swing.JProgressBar" binding="memoryProgressBar">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties/>
+                          </component>
+                          <component id="acc68" class="javax.swing.JLabel" binding="searchResultCountLabel">
+                            <constraints>
+                              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="0"/>
+                            </properties>
+                          </component>
+                          <component id="20111" class="javax.swing.JLabel" binding="searchResultCountInfoLabel">
+                            <constraints>
+                              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="Suchergebnisse:"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <component id="bec1e" class="javax.swing.JProgressBar" binding="progressBar">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="7" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                  </component>
+                  <component id="b7ab" class="javax.swing.JLabel" binding="pictureLoadProgressInfoLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="geladene Bilder:"/>
+                    </properties>
+                  </component>
+                  <component id="6d352" class="javax.swing.JLabel" binding="memoryProgressInfoLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="Speicherverbrauch:"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="2f035" binding="clipboardPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Sammelmappe"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <scrollpane id="24633" binding="clipboardScrollPane">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="-1" height="1200"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-3355444"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="364fd" class="javax.swing.JTable" binding="clipboardTable">
+                    <constraints/>
+                    <properties>
+                      <autoCreateRowSorter value="true"/>
+                      <minimumSize width="30" height="80"/>
+                      <name value="gesammelte Treffer"/>
+                      <preferredScrollableViewportSize width="450" height="600"/>
+                      <updateSelectionOnSort value="true"/>
+                    </properties>
+                    <clientProperties>
+                      <terminateEditOnFocusLost class="java.lang.Boolean" value="false"/>
+                    </clientProperties>
+                  </component>
+                </children>
+              </scrollpane>
+              <vspacer id="b9069">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <maximum-size width="-1" height="20"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <grid id="cc20a" binding="clipboardFooterCotrollPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="4" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="6ec2b" binding="clipboardHandlerPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="East"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="5f5ee" class="javax.swing.JButton" binding="clipboardHandlerButton">
+                        <constraints border-constraint="Center"/>
+                        <properties>
+                          <name value="Sammelmappe Haupt FS Handler"/>
+                          <text value="Rufe den Handler auf"/>
+                        </properties>
+                      </component>
+                      <component id="6a733" class="javax.swing.JButton" binding="optionalClipboardHandlerButton">
+                        <constraints border-constraint="West"/>
+                        <properties>
+                          <name value="Sammelmappe Sekundärer FS Handler"/>
+                          <text value="Im Client Öffnen"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <vspacer id="f3969">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+    </children>
+  </grid>
+</form>
