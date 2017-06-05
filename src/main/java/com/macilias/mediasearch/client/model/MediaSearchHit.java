@@ -18,12 +18,6 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-//import de.espirit.common.Logging;
-//import de.espirit.common.util.HashCodeBuilder;
-//import de.espirit.firstspirit.access.store.IDProvider;
-//import de.espirit.firstspirit.access.store.mediastore.Media;
-//import de.espirit.firstspirit.access.store.mediastore.Picture;
-
 public class MediaSearchHit {
 
 	private static final Logger LOG = Logger.getLogger(MediaSearchHit.class);

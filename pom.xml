@@ -8,18 +8,11 @@
 	<name>mediasearch</name>
 	<description>mediasearch</description>
 
-	<properties>
-		<slf4j-log4j12.version>1.7.12</slf4j-log4j12.version>
-		<commons-lang3.version>3.4</commons-lang3.version>
-		<!--<maven.version>3.3.9</maven.version>-->
-		<!--<junit.version>4.11</junit.version>-->
-	</properties>
 
 	<dependencies>
-
 		<!--
 		since we can not use the mvn dependency for what ever reason directly,
-		we need to dowload the artifact from
+		we need to download the artifact from
 		https://mvnrepository.com/artifact/net.sf.nachocalendar/nachocalendar/0.23
 		and install it manually
 		mvn install:install-file -Dfile=nachocalendar-0.23.jar -DgroupId=net.sf -DartifactId=nachocalendar -Dversion=0.23 -Dpackaging=jar -DgeneratePom=true
@@ -33,7 +26,7 @@
 
 		<!--
 		since we can not use the mvn dependency for what ever reason directly,
-		we need to dowload the artifact from
+		we need to download the artifact from
 		https://mvnrepository.com/artifact/com.intellij/forms_rt/6.0.5
 		and install it manually
 		mvn install:install-file -Dfile=forms_rt-6.0.5.jar -DgroupId=com.intellij -DartifactId=forms_rt -Dversion=6.0.5 -Dpackaging=jar -DgeneratePom=true
@@ -47,7 +40,7 @@
 
 		<!--
 		since we can not use the mvn dependency for what ever reason directly,
-		we need to dowload the artifact from
+		we need to download the artifact from
 		https://mvnrepository.com/artifact/org.imgscalr/imgscalr-lib/4.2
 		and install it manually
 		mvn install:install-file -Dfile=imgscalr-lib-4.2.jar -DgroupId=org.imgscalr -DartifactId=imgscalr-lib -Dversion=4.2 -Dpackaging=jar -DgeneratePom=true
@@ -66,31 +59,45 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			<version>2.2.4</version>
+			<version>2.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>15.0</version>
+			<version>10.0.1</version>
 		</dependency>
+		<!--
+		since i had problems to use the mvn dependency for what ever reason directly,
+		we need to download the artifact from
+		https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.4
+		and install it manually
+		mvn install:install-file -Dfile=commons-lang3-3.4.jar -DgroupId=org.apache.commons -DartifactId=commons-lang3 -Dversion=3.4 -Dpackaging=jar -DgeneratePom=true
+		-->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>${commons-lang3.version}</version>
+			<version>3.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j-log4j12.version}</version>
+			<version>1.7.21</version>
 		</dependency>
 
 
 
 		<!-- Testing -->
+		<!--
+		since we can not use the mvn dependency for what ever reason directly,
+		we need to download the artifact from
+		https://mvnrepository.com/artifact/com.oracle/ojdbc6/11.2.0.4.0-atlassian-hosted
+		and install it manually
+		mvn install:install-file -Dfile=ojdbc6-11.2.0.4.0-atlassian-hosted.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.4.0-atlassian-hosted -Dpackaging=jar -DgeneratePom=true
+		-->
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0.2.0</version>
+			<version>11.2.0.4.0-atlassian-hosted</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -121,21 +128,6 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.5</version>
 		</dependency>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>10.0.1</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -143,6 +135,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.5.0</version>
 				<configuration>
 					<mainClass>com.macilias.mediasearch.client.view.MediaSearchGUI</mainClass>
 				</configuration>
@@ -194,19 +187,27 @@
 				</executions>
 			</plugin>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-
-    </plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+    	</plugins>
 	</build>
 
 	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+		</repository>
 		<repository>
 			<id>jspresso</id>
 			<name>jspresso</name>
